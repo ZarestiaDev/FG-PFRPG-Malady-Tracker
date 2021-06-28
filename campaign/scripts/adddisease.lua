@@ -30,7 +30,7 @@ function addDisease(nodeChar, sClass, sRecord, nodeTargetList)
 				ActionDiseaseTimeRoll.performRoll(draginfo, nodeEntry, rActor, DB.getValue(nodeSource, 'duration_dice'), DB.getValue(nodeSource, 'duration_interval'), 'Duration')
 			end
 		end
-		if TimeManager_Disabled and DB.getValue(nodeEntry, 'freq_interval') and tonumber(DB.getValue(nodeEntry, 'freq_unit', 0.1)) then
+		if LongTermEffects and DB.getValue(nodeEntry, 'freq_interval') and tonumber(DB.getValue(nodeEntry, 'freq_unit', 0.1)) then
 			local nDateinMinutes = TimeManager.getCurrentDateinMinutes()
 			--Debug.chat('addDisease', nDateinMinutes)
 			DB.setValue(nodeEntry, 'starttime', 'number', nDateinMinutes)

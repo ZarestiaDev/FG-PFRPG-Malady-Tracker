@@ -3,7 +3,7 @@
 --
 
 function onInit()
-	if TimeManager_Disabled and LongTermEffects then
+	if LongTermEffects then
 		DB.addHandler('calendar.dateinminutes', 'onUpdate', parseDiseases)
 	end
 

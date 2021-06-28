@@ -219,7 +219,7 @@ function ifUnlocked(sType)
 	end
 
 	button_settime.setVisible(false)
-	if TimeManager_Disabled and getDatabaseNode().getParent().getName() ~= 'disease' and getDatabaseNode().getChild('...').getName() ~= 'reference' then
+	if LongTermEffects and getDatabaseNode().getParent().getName() ~= 'disease' and getDatabaseNode().getChild('...').getName() ~= 'reference' then
 		button_settime.setVisible(true)
 	end
 

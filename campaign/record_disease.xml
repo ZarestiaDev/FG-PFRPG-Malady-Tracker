@@ -244,7 +244,7 @@
 				<gmvisibleonly />
 				<script>
 					function onButtonPress()
-						if TimeManager_Disabled then
+						if LongTermEffects then
 							local nDateinMinutes = TimeManager.getCurrentDateinMinutes()
 							DB.setValue(window.getDatabaseNode(), 'starttime', 'number', nDateinMinutes)
 							DB.setValue(window.getDatabaseNode(), 'starttimestring', 'string', tostring(nDateinMinutes))
