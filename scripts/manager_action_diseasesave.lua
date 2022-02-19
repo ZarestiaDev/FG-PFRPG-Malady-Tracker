@@ -82,10 +82,10 @@ function notifyApplySave(rSource, rRoll)
 		local sPoisonEffect = DB.getValue(nodeDiseaseRoll, 'poison_effect_primary', '')
 		if sPoisonEffect ~= '' then sMaladyEffect = sMaladyEffect .. '\n' .. Interface.getString('disease_failure_effect_primary') .. ' ' .. sPoisonEffect end
 
-		local sPoisonSecondary = DB.getValue(nodeDiseaseRoll, 'poison_effect_primary', '')
+		local sPoisonSecondary = DB.getValue(nodeDiseaseRoll, 'poison_effect_secondary', '')
 		if sPoisonSecondary ~= '' then sMaladyEffect = sMaladyEffect .. '\n' .. Interface.getString('disease_failure_effect_secondary') .. ' ' .. sPoisonSecondary end
 
-		ChatManager.Message(Interface.getString('disease_failure_effect') .. ' ' .. sMaladyEffect, false)
+		ChatManager.Message(Interface.getString('disease_failure_effect') .. ' ' .. sMaladyEffect, true, rSource)
 	end
 end
 
@@ -261,7 +261,7 @@ function modSave(rSource, rTarget, rRoll)
 		-- If effects, then add them
 		if bEffects then
 			local sEffects = ''
-			local sMod = StringManager.convertDiceToString(aAddDice, nAddMod, true)
+			local sMod = DiceManager.convertDiceToString(aAddDice, nAddMod, true)
 			if sMod ~= '' then
 				sEffects = '[' .. Interface.getString('effects_tag') .. ' ' .. sMod .. ']'
 			else
